@@ -4,7 +4,7 @@
  * @author Козлов Максим
  */
 #include <stdio.h>
-#include "student.h"
+#include "../include/student.h"
 
 int main() {
     STUDENT group[GROUP_SIZE];
