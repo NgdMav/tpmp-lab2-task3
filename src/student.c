@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include "student.h"
+#include "../include/student.h"
 
 void inputStudents(STUDENT *students, int count) {
     printf("Ввод данных для %d студентов:\n", count);
