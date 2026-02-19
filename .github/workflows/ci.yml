@@ -1,0 +1,25 @@
+name: C Build and Test
+
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y gcc make
+
+    - name: Build with Make
+      run: make
+
+    - name: Run the program (with sample input)
+      run: |
+        echo -e "Иванов И.И.\n3\n5 4 5 4 5\nПетров П.П.\n2\n4 3 4 3 4\nСидоров С.С.\n4\n5 5 5 5 5" | ./student_app
